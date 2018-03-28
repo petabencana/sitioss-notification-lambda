@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/urbanriskmap/cognicity-notification-lambda.svg?branch=master)](https://travis-ci.org/urbanriskmap/cognicity-notification-lambda)
+
 # cognicity-notification-lambda
 Notification service for CogniCity (send messages to SNS topic)
 
