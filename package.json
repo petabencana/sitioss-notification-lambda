@@ -4,6 +4,7 @@
   "description": "Notification service for CogniCity (send messages to users)",
   "main": "index.js",
   "scripts": {
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint --fix src/functions",
     "mocha": "nyc mocha --require babel-core/register src/test/index",
     "test": "npm run lint && npm run mocha"
