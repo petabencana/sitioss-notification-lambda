@@ -1,7 +1,7 @@
 import * as test from 'unit.js';
 
 // Import the class to test
-import Notify from '../functions/notify/notify';
+import Notify from '../functions/notify/notify.js';
 
 
 /**
