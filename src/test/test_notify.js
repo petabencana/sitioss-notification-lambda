@@ -1,9 +1,13 @@
 import * as test from 'unit.js';
 
 // Import the class to test
-import Notify from '../functions/notify/Notify';
+import Notify from '../functions/notify/notify';
 
-export default function(config) {
+/**
+ * testNotify - testing harness for the Notify Class
+ * @function testNotify
+ */
+export default function() {
   // Test harness
   describe('Notify Class Testing', function() {
     // Text objects
@@ -47,11 +51,12 @@ export default function(config) {
 
     // Ouput
     it('Sends correct request to SNS', function(done) {
-      let expected = {Message: '{"language":"lang","username":"user","implementation_area":"city","report_id":1}',
-  TopicArn: 'arn:aws:sns:region:123:Facebook'};
+      let expected = {Message: `{"language":"lang","username":"user",` +
+      `"implementation_area":"city","report_id":1}`,
+        TopicArn: 'arn:aws:sns:region:123:Facebook'};
 
-      const params = {instanceRegionCode: 'city', lang: 'lang', network: 'facebook',
-        reportId: 1, username: 'user'};
+      const params = {instanceRegionCode: 'city', lang: 'lang',
+        network: 'facebook', reportId: 1, username: 'user'};
 
       notify.send(params)
         .then((data) => {

@@ -13,9 +13,6 @@ const paramSchema = Joi.object().keys({
 /**
  * Creates a new notify object
  * @class Notify
- * @param {string} topicARN - AWS SNS Topic ARN
- * @param {string} awsRegion - AWS SNS Region
- * @param {string} accountID - AWS SNS Account ID
  */
  export default class Notify {
    /**
@@ -74,10 +71,10 @@ const paramSchema = Joi.object().keys({
 
       // create message
       let message = {
-        'language': params.lang,
-        'username': params.username,
-        'implementation_area': params.instanceRegionCode,
-        'report_id': params.reportId,
+        language: params.lang,
+        username: params.username,
+        implementation_area: params.instanceRegionCode,
+        report_id: params.reportId,
       };
 
       // get topic

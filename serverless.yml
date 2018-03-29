@@ -1,0 +1,25 @@
+service: cognicity-notification-lambda
+
+custom:
+  projectName: cognicity-notification-lambda
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: us-west-2
+  stackTacks:
+    area: 'US'
+
+  functions:
+    notify:
+      handler: lib/functions/notify/index.default
+      environment:
+        AWS_REGION: ${env:AWS_REGION_US}
+        AWS_SNS_ACCOUNT_ID: ${env:AWS_SNS_ACCOUNT_ID_US}
+        AWS_SNS_TOPIC_ARN: ${env:AWS_SNS_TOPIC_ARN_US}
+      events:
+        - http:
+            path: notify
+            method: POST
+            integration: lambda
