@@ -1,4 +1,4 @@
-import Notify from './notify';
+import Notify from './Notify';
 import response from '../lib/response';
 
 export default (event, context, callback) => {
