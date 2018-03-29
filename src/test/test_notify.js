@@ -1,8 +1,7 @@
 import * as test from 'unit.js';
 
 // Import the class to test
-import Notify from '../functions/notify/notify.js';
-
+import Notify from '../functions/notify/Notify';
 
 /**
  * testNotify - testing harness for the Notify Class
