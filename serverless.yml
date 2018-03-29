@@ -10,6 +10,8 @@ provider:
   region: us-west-2
   stackTacks:
     area: 'US'
+  apiKeys:
+    - ${env:AWS_NOTIFY_API_KEY_US}
 
   functions:
     notify:
@@ -22,4 +24,5 @@ provider:
         - http:
             path: notify
             method: POST
+            private: true
             integration: lambda
