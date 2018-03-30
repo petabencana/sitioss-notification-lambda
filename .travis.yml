@@ -14,10 +14,10 @@ before_deploy:
 deploy:
   provider: "lambda"
   function_name: "cognicity-notification-lambda"
-  region: ${env:AWS_REGION_US}
-  role:
+  region: $AWS_REGION_US
+  role: $AWS_LAMBDA_ROLE_US
   runtime: "nodejs6.10"
   handler_name: "bin/functions/notify/index.default"
   environment_variables:
-    - AWS_REGION: ${env:AWS_REGION_US}
-    - AWS_SNS_ACCOUNT_ID: ${env:AWS_SNS_ACCOUNT_ID_US}
+    - AWS_REGION: $AWS_REGION_US
+    - AWS_SNS_ACCOUNT_ID: $AWS_SNS_ACCOUNT_ID_US
