@@ -17,7 +17,8 @@ deploy:
   region: $AWS_REGION_US
   role: $AWS_LAMBDA_ROLE_US
   runtime: "nodejs6.10"
-  handler_name: "bin/functions/notify/index.default"
+  module_name: "bin/functions/notify/index"
+  handler_name: "default"
   environment_variables:
     - AWS_REGION: $AWS_REGION_US
     - AWS_SNS_ACCOUNT_ID: $AWS_SNS_ACCOUNT_ID_US
