@@ -11,7 +11,7 @@ export default function() {
   // Test harness
   describe('Notify Class Testing', function() {
     // Text objects
-    const notify = new Notify('arn', 'region', '123');
+    const notify = new Notify('region', '123');
     const params = {instanceRegionCode: 'city', lang: 'lang', network: 'net',
       reportId: 1, username: 'user'};
     const oldSNS = notify.sns;

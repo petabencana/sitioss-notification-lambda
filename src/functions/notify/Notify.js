@@ -17,13 +17,11 @@ const paramSchema = Joi.object().keys({
  export default class Notify {
    /**
     * constructor new Notify()
-    * @param {string} topicARN - AWS SNS Topic ARN
     * @param {string} awsRegion - AWS SNS Region
     * @param {string} accountID - AWS SNS Account ID
     */
-  constructor(topicARN, awsRegion, accountID) {
+  constructor(awsRegion, accountID) {
     // AWS stuff
-    this.topicARN = topicARN;
     this.awsRegion = awsRegion;
     this.accountID = accountID;
 

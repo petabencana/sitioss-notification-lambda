@@ -7,8 +7,8 @@ export default (event, context, callback) => {
   console.log('Incoming body: ' + JSON.stringify(event.body));
 
   // Create notify object
-  const notify = new Notify(process.env.AWS_SNS_TOPIC_ARN,
-    process.env.AWS_REGION, process.env.AWS_SNS_ACCOUNT_ID);
+  const notify = new Notify(process.env.AWS_REGION,
+    process.env.AWS_SNS_ACCOUNT_ID);
 
   const params = {
     instanceRegionCode: event.body.instanceRegionCode,
