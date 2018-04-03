@@ -3,6 +3,16 @@
 # cognicity-notification-lambda
 Notification service for CogniCity (send messages to SNS topic)
 
+### Description
 Exposes a RESTFul API for sending messages to existing CogniCity users via their chosen social media channel.
 
 This Lambda publishes to AWS SNS topic, which is then captured by the appropriate social lambda (Twitter, Facebook, Telegram) to send message to user.
+
+### Build
+`npm run build`
+
+### Test
+`npm run test`
+
+### Deployment
+Deployed to AWS via Travis CI. API GW integration is a manual process.
