@@ -15,6 +15,6 @@ export default (event, context, callback) => {
       callback(response(200, 'success!'));
     }).catch((err) => {
       callback(null, response(500, JSON.stringify({'statusCode': 500, 'message':
-        'Server error ' + error})));
+        'Server error: ' + err})));
     });
 };
