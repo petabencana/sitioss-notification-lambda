@@ -81,6 +81,7 @@ const paramSchema = Joi.object().keys({
       if (topicName === null) {
         console.log('firing here...')
         reject(new Error(`No SNS topic for the provided network`));
+        return;
         }
       // Construct message payload
       let payload = {
