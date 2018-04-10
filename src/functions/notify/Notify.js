@@ -69,7 +69,7 @@ const paramSchema = Joi.object().keys({
 
       // create message
       let message = {
-        language: params.lang,
+        language: params.language,
         username: params.username,
         implementation_area: params.instanceRegionCode,
         report_id: params.reportId,
@@ -77,9 +77,7 @@ const paramSchema = Joi.object().keys({
 
       // get topic
       let topicName = this._setTopicName(params.network);
-      console.log('topicName', topicName);
       if (topicName === null) {
-        console.log('firing here...')
         reject(new Error(`No SNS topic for the provided network`));
         return;
         }
