@@ -12,8 +12,8 @@ export default function() {
   describe('Notify Class Testing', function() {
     // Text objects
     const notify = new Notify('region', '123');
-    const params = {instanceRegionCode: 'city', lang: 'lang', network: 'net',
-      reportId: 1, username: 'user'};
+    const params = {instanceRegionCode: 'city', language: 'lang',
+    network: 'net', reportId: 1, username: 'user'};
     const oldSNS = notify.sns;
 
     // Mock SNS method
@@ -55,7 +55,7 @@ export default function() {
       `"implementation_area":"city","report_id":1}`,
         TopicArn: 'arn:aws:sns:region:123:Facebook'};
 
-      const params = {instanceRegionCode: 'city', lang: 'lang',
+      const params = {instanceRegionCode: 'city', language: 'lang',
         network: 'facebook', reportId: 1, username: 'user'};
 
       notify.send(params)

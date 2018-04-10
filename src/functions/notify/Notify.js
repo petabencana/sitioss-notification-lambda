@@ -4,7 +4,7 @@ const Joi = require('joi');
 // paramSchema for validation
 const paramSchema = Joi.object().keys({
   instanceRegionCode: Joi.string().required(),
-  lang: Joi.string().required(),
+  language: Joi.string().required(),
   network: Joi.string().required(),
   reportId: Joi.number().required(),
   username: Joi.string().required(),
@@ -54,7 +54,7 @@ const paramSchema = Joi.object().keys({
    * @method notify
    * @param {Object} params Parameters for notification
    * @param {string} params.instanceRegionCode CogniCity Instance Region Code
-   * @param {string} params.lang Language code
+   * @param {string} params.language Language code
    * @param {string} params.network Social channel
    * @param {number} params.reportId Report ID
    * @param {string} params.username User social handle or unique identifier
