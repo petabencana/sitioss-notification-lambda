@@ -78,6 +78,7 @@ const paramSchema = Joi.object().keys({
       // get topic
       let topicName = this._setTopicName(params.network);
       if (topicName === null) {
+        console.log('Invalid SNS topic, will exit.');
         reject(new Error(`No SNS topic for the provided network`));
         return;
         }
