@@ -77,6 +77,7 @@ const paramSchema = Joi.object().keys({
 
       // get topic
       let topicName = this._setTopicName(params.network);
+      console.log('topicName', topicName);
       if (topicName === null) {
         reject(new Error(`No SNS topic for the provided network`));
         }
