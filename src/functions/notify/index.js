@@ -10,14 +10,7 @@ export default (event, context, callback) => {
   const notify = new Notify(process.env.AWS_REGION,
     process.env.AWS_SNS_ACCOUNT_ID);
 
-  const params = {
-    instanceRegionCode: event.body.instanceRegionCode,
-    language: event.body.language,
-    report_id: event.body.reportId, // TODO make report_id camel case
-    username: event.body.username,
-  };
-
-  notify.send(params)
+  notify.send(event.body)
     .then((result) => {
       callback(response(200, 'success!'));
     }).catch((err) => {
