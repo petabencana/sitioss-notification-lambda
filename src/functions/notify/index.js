@@ -16,7 +16,7 @@ export default (event, context, callback) => {
     }).catch((err) => {
       console.log('here is the error:' + err)
       let res = JSON.stringify({'statusCode': 500,
-        'message': err})
+        'message': err.message})
       console.log('here is the response: ' + res);
       callback(null, response(500, res));
     });
