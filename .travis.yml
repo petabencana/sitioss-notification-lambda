@@ -7,11 +7,14 @@ install: npm install
 script:
   - npm run test && npm run coverage
 
+before_deploy:
+  - npm run build
+
 deploy:
   provider: "lambda"
   function_name: "cognicity-notification-lambda"
   region: $AWS_REGION_US
   role: $AWS_LAMBDA_ROLE_US
   runtime: "nodejs6.10"
-  module_name: "src/functions/notify/index"
+  module_name: "bin/functions/notify/index"
   handler_name: "default"
