@@ -2,7 +2,7 @@ import * as test from 'unit.js';
 
 // Import the class to test
 import response from '../lib/response';
-
+console.log('here', response(200, 'abc'));
 /**
  * testResponse - testing harness for the Response function
  * @function testNotify

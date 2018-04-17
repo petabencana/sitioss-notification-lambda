@@ -1,5 +1,5 @@
 import Notify from './Notify';
-import response from '../lib/response';
+import response from '../../lib/response';
 
 export default (event, context, callback) => {
   // Log statements
