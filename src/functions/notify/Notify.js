@@ -76,6 +76,8 @@ const paramSchema = Joi.object().keys({
       };
 
       // get topic
+      console.log(params);
+      console.log(params.network);
       let topicName = this._setTopicName(params.network);
       console.log(topicName);
       if (topicName === null) {
