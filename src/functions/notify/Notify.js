@@ -94,7 +94,7 @@ const paramSchema = Joi.object().keys({
       console.log(payload);
       console.log(`Publishing to ` + topicName);
       this.sns.publish(payload, function(err, data) {
-        console.log(err.message);
+        console.log(err);
         console.log(data);
         resolve(data);
         /*if (err) reject(err);
