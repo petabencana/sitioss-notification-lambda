@@ -16,17 +16,10 @@ export default (event, context, callback) => {
   // Request notification
   notify.send(params)
     .then((result) => {
-      console.log('result: ', result);
       const res = response(200, 'success');
-      console.log(res);
-      const test = {
-        statusCode: 200,
-        headers: {},
-        body: JSON.stringify({}),
-      };
-      callback(null, test);
+      callback(null, res);
 
-      //callback(null, JSON.stringify(res));
+      // callback(null, JSON.stringify(res));
     }).catch((err) => {
       console.log('here is the error:' + err);
       const res = JSON.stringify({'statusCode': 500,

@@ -2,7 +2,6 @@ import * as test from 'unit.js';
 
 // Import the class to test
 import response from '../lib/response';
-console.log('here', response(200, 'abc'));
 /**
  * testResponse - testing harness for the Response function
  * @function testNotify
@@ -14,7 +13,7 @@ export default function() {
     it('Returns expected response', function() {
       const res = response(200, 'body');
       test.value(res.statusCode).is(200);
-      test.value(res.body).is('body');
+      test.value(res.body).is(JSON.stringify('body'));
     });
   });
 }

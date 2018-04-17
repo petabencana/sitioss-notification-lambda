@@ -76,10 +76,7 @@ const paramSchema = Joi.object().keys({
       };
 
       // get topic
-      console.log(params);
-      console.log(params.network);
       let topicName = this._setTopicName(params.network);
-      console.log(topicName);
       if (topicName === null) {
         console.log('Invalid SNS topic, will exit.');
         reject(new Error(`No SNS topic for the provided network`));
@@ -91,14 +88,13 @@ const paramSchema = Joi.object().keys({
         TopicArn: `arn:aws:sns:` + this.awsRegion + `:` + this.accountID + `:`
           + topicName,
       };
-      console.log(payload);
       console.log(`Publishing to ` + topicName);
       this.sns.publish(payload, function(err, data) {
-        console.log(err);
-        console.log(data);
-        resolve(data);
-        /* if (err) reject(err);
-        resolve(data);*/
+        if (err) {
+          reject(err);
+        } else {
+          resolve(data);
+        }
       });
     });
   }

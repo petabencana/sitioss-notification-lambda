@@ -15,7 +15,7 @@ export default (statusCode, body) => {
   const response = {
     statusCode: statusCode,
     headers: headers,
-    body: body,
+    body: JSON.stringify(body),
   };
 
   return (response);
