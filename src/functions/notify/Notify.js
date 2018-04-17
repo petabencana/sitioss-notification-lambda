@@ -95,8 +95,10 @@ const paramSchema = Joi.object().keys({
       console.log(`Publishing to ` + topicName);
       this.sns.publish(payload, function(err, data) {
         console.log(err.message);
-        if (err) reject(err);
-        resolve(data);
+        console.log(data);
+        resolve('completed...')
+        /*if (err) reject(err);
+        resolve(data);*/
       });
     });
   }
