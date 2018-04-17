@@ -34,12 +34,12 @@ export default (event, context, callback) => {
       console.log('result: ', result);
       const res = response(200, 'success');
       console.log(res);
-      callback(res);
+      callback(JSON.stringify(res));
     }).catch((err) => {
       console.log('here is the error:' + err);
-      let res = JSON.stringify({'statusCode': 500,
+      const res = JSON.stringify({'statusCode': 500,
         'message': err.message});
       console.log('here is the response: ' + res);
-      callback(null, response(500, res));
+      callback(null, res);
     });
 };
