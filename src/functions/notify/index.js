@@ -1,20 +1,5 @@
 import Notify from './Notify';
-
-const response = function(statusCode, body) {
-  const headers = {
-    'Access-Control-Allow-Origin': '*', // Required for CORS support to work
-    'Access-Control-Allow-Credentials': true,
-      // Required for cookies, authorization headers with HTTPS
-  };
-
-  const response = {
-    statusCode: statusCode,
-    headers: headers,
-    body: body,
-  };
-
-  return (response);
-};
+import response from '../../lib/response';
 
 export default (event, context, callback) => {
   // Log statements
@@ -34,7 +19,7 @@ export default (event, context, callback) => {
       console.log('result: ', result);
       const res = response(200, 'success');
       console.log(res);
-      callback(JSON.stringify(res));
+      callback(null, JSON.stringify(res));
     }).catch((err) => {
       console.log('here is the error:' + err);
       const res = JSON.stringify({'statusCode': 500,

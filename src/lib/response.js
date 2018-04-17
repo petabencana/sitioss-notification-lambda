@@ -5,7 +5,7 @@
  * @param {string} body Body for HTTP response
  * @return {Object} response object
  */
-export default function(statusCode, body) {
+export default (statusCode, body) => {
   const headers = {
     'Access-Control-Allow-Origin': '*', // Required for CORS support to work
     'Access-Control-Allow-Credentials': true,
@@ -19,4 +19,4 @@ export default function(statusCode, body) {
   };
 
   return (response);
-}
+};
