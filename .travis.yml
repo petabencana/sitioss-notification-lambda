@@ -18,6 +18,3 @@ deploy:
   runtime: "nodejs6.10"
   module_name: "bin/functions/notify/index"
   handler_name: "default"
-  environment_variables:
-    - AWS_REGION: $AWS_REGION_US
-    - AWS_SNS_ACCOUNT_ID: $AWS_SNS_ACCOUNT_ID_US
