@@ -91,6 +91,7 @@ const paramSchema = Joi.object().keys({
         TopicArn: `arn:aws:sns:` + this.awsRegion + `:` + this.accountID + `:`
           + topicName,
       };
+      console.log(payload);
       console.log(`Publishing to ` + topicName);
       this.sns.publish(payload, function(err, data) {
         if (err) reject(err);
