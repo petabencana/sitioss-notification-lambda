@@ -1,5 +1,5 @@
 import Notify from './Notify';
-import response from '../../lib/response';
+import response from '../lib/response';
 
 export default (event, context, callback) => {
   // Log statements
@@ -17,9 +17,9 @@ export default (event, context, callback) => {
   notify.send(params)
     .then((result) => {
       console.log('result: ', result);
-      const response = response(200, 'success');
-      console.log(response);
-      callback(response);
+      const res = response(200, 'success');
+      console.log(res);
+      callback(res);
     }).catch((err) => {
       console.log('here is the error:' + err);
       let res = JSON.stringify({'statusCode': 500,

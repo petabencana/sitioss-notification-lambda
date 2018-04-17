@@ -97,7 +97,7 @@ const paramSchema = Joi.object().keys({
         console.log(err);
         console.log(data);
         resolve(data);
-        /*if (err) reject(err);
+        /* if (err) reject(err);
         resolve(data);*/
       });
     });
