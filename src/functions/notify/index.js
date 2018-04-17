@@ -1,5 +1,20 @@
 import Notify from './Notify';
-import response from '../../lib/response';
+
+const response = function(statusCode, body) {
+  const headers = {
+    'Access-Control-Allow-Origin': '*', // Required for CORS support to work
+    'Access-Control-Allow-Credentials': true,
+      // Required for cookies, authorization headers with HTTPS
+  };
+
+  const response = {
+    statusCode: statusCode,
+    headers: headers,
+    body: body,
+  };
+
+  return (response);
+};
 
 export default (event, context, callback) => {
   // Log statements
