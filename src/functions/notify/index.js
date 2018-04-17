@@ -19,7 +19,14 @@ export default (event, context, callback) => {
       console.log('result: ', result);
       const res = response(200, 'success');
       console.log(res);
-      callback(null, JSON.stringify(res));
+      const test = {
+        statusCode: 200,
+        headers: {},
+        body: JSON.stringify({}),
+      };
+      callback(null, test);
+
+      //callback(null, JSON.stringify(res));
     }).catch((err) => {
       console.log('here is the error:' + err);
       const res = JSON.stringify({'statusCode': 500,
