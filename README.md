@@ -3,6 +3,9 @@
 # cognicity-notification-lambda
 Notification service for CogniCity (send messages to SNS topic)
 
+## DEPRECATED
+Notifications are now sent directly from cognicity-server (as of version 3.0.6)
+
 ### Description
 Exposes a RESTFul API for sending messages to existing CogniCity users via their chosen social media channel.
 
